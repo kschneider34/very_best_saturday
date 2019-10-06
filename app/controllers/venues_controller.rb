@@ -6,6 +6,7 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.new
     @venue = Venue.find(params.fetch("id_to_display"))
 
     render("venue_templates/show.html.erb")
@@ -26,6 +27,20 @@ class VenuesController < ApplicationController
       @venue.save
 
       redirect_back(:fallback_location => "/venues", :notice => "Venue created successfully.")
+    else
+      render("venue_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_neighborhood
+    @venue = Venue.new
+
+    @venue.neighborhood_id = params.fetch("neighborhood_id")
+
+    if @venue.valid?
+      @venue.save
+
+      redirect_to("/neighborhoods/#{@venue.neighborhood_id}", notice: "Venue created successfully.")
     else
       render("venue_templates/new_form_with_errors.html.erb")
     end
