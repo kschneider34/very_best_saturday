@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Favorite, type: :model do
+RSpec.describe Bookmark, type: :model do
   
     describe "Direct Associations" do
 

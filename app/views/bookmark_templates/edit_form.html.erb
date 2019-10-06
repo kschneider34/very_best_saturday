@@ -1,0 +1,35 @@
+<h1>
+  Edit bookmark #<%= @bookmark.id %>
+</h1>
+
+<hr>
+
+<form action="/update_bookmark/<%= @bookmark.id %>" method="post">
+
+  <div class="form-group">
+    <label for="dish_id">
+      Dish
+    </label>
+
+    <%= select_tag(:dish_id, options_from_collection_for_select(Dish.all, :id, :name, @bookmark.dish_id), :class => "form-control") %>
+  </div>
+
+
+  <div class="form-group">
+    <label for="venue_id">
+      Venue
+    </label>
+
+    <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :neighborhood_id, @bookmark.venue_id), :class => "form-control") %>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update bookmark
+  </button>
+</form>
+
+<hr>
+
+<a href="/bookmarks">
+  Go back
+</a>
