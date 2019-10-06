@@ -42,27 +42,27 @@ Rails.application.routes.draw do
 
   #------------------------------
 
-  # Routes for the Favorite resource:
+  # Routes for the Bookmark resource:
 
   # CREATE
-  get("/favorites/new", { :controller => "favorites", :action => "new_form" })
-  post("/create_favorite", { :controller => "favorites", :action => "create_row" })
-  post("/create_favorite_from_venue", { :controller => "favorites", :action => "create_row_from_venue" })
-  post("/create_favorite_from_dish", { :controller => "favorites", :action => "create_row_from_dish" })
+  get("/bookmarks/new", { :controller => "bookmarks", :action => "new_form" })
+  post("/create_bookmark", { :controller => "bookmarks", :action => "create_row" })
+  post("/create_bookmark_from_venue", { :controller => "bookmarks", :action => "create_row_from_venue" })
+  post("/create_bookmark_from_dish", { :controller => "bookmarks", :action => "create_row_from_dish" })
 
   # READ
-  get("/favorites", { :controller => "favorites", :action => "index" })
-  get("/favorites/:id_to_display", { :controller => "favorites", :action => "show" })
+  get("/bookmarks", { :controller => "bookmarks", :action => "index" })
+  get("/bookmarks/:id_to_display", { :controller => "bookmarks", :action => "show" })
 
   # UPDATE
-  get("/favorites/:prefill_with_id/edit", { :controller => "favorites", :action => "edit_form" })
-  post("/update_favorite/:id_to_modify", { :controller => "favorites", :action => "update_row" })
+  get("/bookmarks/:prefill_with_id/edit", { :controller => "bookmarks", :action => "edit_form" })
+  post("/update_bookmark/:id_to_modify", { :controller => "bookmarks", :action => "update_row" })
 
   # DELETE
-  get("/delete_favorite/:id_to_remove", { :controller => "favorites", :action => "destroy_row" })
-  get("/delete_favorite_from_venue/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_venue" })
-  get("/delete_favorite_from_user/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_user" })
-  get("/delete_favorite_from_dish/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_dish" })
+  get("/delete_bookmark/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row" })
+  get("/delete_bookmark_from_venue/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row_from_venue" })
+  get("/delete_bookmark_from_user/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row_from_user" })
+  get("/delete_bookmark_from_dish/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row_from_dish" })
 
   #------------------------------
 

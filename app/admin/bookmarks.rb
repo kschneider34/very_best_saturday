@@ -1,4 +1,4 @@
-ActiveAdmin.register Favorite do
+ActiveAdmin.register Bookmark do
 
  permit_params :dish_id, :user_id, :venue_id
 # See permitted parameters documentation:

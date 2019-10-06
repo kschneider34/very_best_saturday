@@ -1,6 +1,19 @@
-<form action="/create_bookmark_from_dish" method="post">
+<h1>
+  Add a new bookmark
+</h1>
 
-  <input type="hidden" name="dish_id" value="<%= @dish.id %>">
+
+<hr>
+
+<form action="/create_bookmark" method="post">
+
+  <div class="form-group">
+    <label for="dish_id">
+      Dish
+    </label>
+
+    <%= select_tag(:dish_id, options_from_collection_for_select(Dish.all, :id, :name, @bookmark.dish_id), :class => "form-control") %>
+  </div>
 
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
@@ -16,3 +29,9 @@
     Create bookmark
   </button>
 </form>
+
+<hr>
+
+<a href="/bookmarks">
+  Go back
+</a>

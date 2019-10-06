@@ -1,0 +1,47 @@
+<% if @bookmark.present? %>
+  <% if @bookmark.errors.any? %>
+    <% @bookmark.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new bookmark
+</h1>
+
+
+<hr>
+
+<form action="/create_bookmark" method="post">
+
+  <div class="form-group">
+    <label for="dish_id">
+      Dish
+    </label>
+
+    <%= select_tag(:dish_id, options_from_collection_for_select(Dish.all, :id, :name, @bookmark.dish_id), :class => "form-control") %>
+  </div>
+
+  <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+  <div class="form-group">
+    <label for="venue_id">
+      Venue
+    </label>
+
+    <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :neighborhood_id, @bookmark.venue_id), :class => "form-control") %>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create bookmark
+  </button>
+</form>
+
+<hr>
+
+<a href="/bookmarks">
+  Go back
+</a>

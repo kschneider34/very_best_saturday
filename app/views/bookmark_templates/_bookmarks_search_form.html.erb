@@ -1,4 +1,4 @@
-<%= search_form_for @q, :class => collapse_search_form, :id => "favorites_filters" do |f| %>
+<%= search_form_for @q, :class => collapse_search_form, :id => "bookmarks_filters" do |f| %>
   <p class="lead">Narrow results:</p>
 
   <div class="form-group">
@@ -55,10 +55,10 @@
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
-  <a href="/favorites" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+  <a href="/bookmarks" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
 
 <% end %>
 
-<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#favorites_filters">
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#bookmarks_filters">
   Show filters
 </a>
