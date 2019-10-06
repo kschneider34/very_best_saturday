@@ -5,21 +5,15 @@
 
 <hr>
 
-<!-- Form venue start -->
 <form action="/create_venue" method="post">
-<!-- Form venue end -->
 
-  <!-- Label and input for neighborhood_id start -->
   <div class="form-group">
     <label for="neighborhood_id">
       Neighborhood
     </label>
 
-    <!-- Input for neighborhood_id start -->
     <%= select_tag(:neighborhood_id, options_from_collection_for_select(Neighborhood.all, :id, :name, @venue.neighborhood_id), :class => "form-control") %>
-    <!-- Input for neighborhood_id end -->
   </div>
-  <!-- Label and input for neighborhood_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create venue
